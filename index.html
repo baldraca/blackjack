@@ -1,20 +1,36 @@
-<!DOCTYPE html>
-<html>
-
-  <head>
+<head>
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>BlackJack by Jonas Wennberg</title>
-  </head>
-
-  <body>
-    <div class="game">
-        <img src="blackjack2.jpg" id="logo">
-        <p id="text-area">""</p>
-        <button id="new-game-button">New Game</button>
-        <button id="hit-button">Hit me!</button>
-        <button id="stay-button">Stay!</button>
-    </div> 
-    <script src="blackjack.js"></script>
-  </body>
-
-</html>
+</head>
+<p></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="blackjack2.jpg" alt="" /></p>
+<table style="height: 13px; margin-left: auto; margin-right: auto;" width="408">
+<tbody>
+<tr>
+<td style="width: 196px; text-align: center;"><strong>Player</strong></td>
+<td style="width: 196px; text-align: center;"><strong>Dealer</strong></td>
+</tr>
+<tr>
+<td style="width: 196px; text-align: center;">
+<p id="player-area" style="text-align: center;">0</p>
+</td>
+<td style="width: 196px; text-align: center;">
+<p id="dealer-area" style="text-align: center;">0</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 style="text-align: center;">&nbsp;</h3>
+<p id="text-area" style="text-align: center;">Text goes here</p>
+<table style="margin-left: auto; margin-right: auto; height: 62px; width: 232.25px;">
+<tbody>
+<tr>
+<td style="width: 150.25px; text-align: center;"><button id="new-game-button">New Game</button></td>
+</tr>
+<tr>
+<td style="width: 250.25px; text-align: center;"><button id="hit-button">Hit me!</button><button id="stay-button">Stay!</button></td>
+</tr>
+</tbody>
+</table>
+<p><img id="winner" style="display: block; margin-left: auto; margin-right: auto;" src="winner.jpg" alt="" /></p>
+<script src="blackjack.js"></script>

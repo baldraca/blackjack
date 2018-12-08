@@ -13,6 +13,9 @@ let newGameButton = document.getElementById('new-game-button');
 let hitButton = document.getElementById('hit-button');
 let stayButton = document.getElementById('stay-button');
 let textArea = document.getElementById('text-area');
+let playerScoreArea = document.getElementById('player-area');
+let dealerScoreArea = document.getElementById('dealer-area');
+let winnerArea = document.getElementById('winner');
 
 // Game variables
 let gameStarted = false;
@@ -29,6 +32,8 @@ let cardDeck = [];
 hitButton.style.display = 'none';
 stayButton.style.display = 'none';
 
+winnerArea.style.visibility = 'hidden';
+
 showStatus();
 
 //Adding functionality to the New Game button
@@ -37,6 +42,8 @@ newGameButton.addEventListener('click', function() {
   gameOver = false;
   playerWon = false;
   gameDraw = false;
+
+  winnerArea.style.visibility = 'hidden';
   
   cardDeck = createDeck();
   shuffleDeck(cardDeck);
@@ -135,12 +142,31 @@ function checkForEndOfGame() {
       playerWon = false;
       gameDraw = false;
     }
-    /*else {
-      playerWon = false; 
-      gameDraw = false;
-    }*/
+
+    if (playerWon === true) {
+      ++playerScoreArea.innerText;
+    }
+    else if (gameDraw !== true && playerWon !== true) {
+      ++dealerScoreArea.innerText;
+    }
+
+    if (playerScoreArea.innerText == "10" || dealerScoreArea.innerText == "10") {
+      if (dealerScoreArea.innerText > playerScoreArea.innerText) {
+        console.log("DEALER WINS IT ALL!");
+        winnerArea.src = "looser.jpg"
+        winnerArea.style.visibility = 'visible';
+      }
+      else {
+        console.log("PLAYER WINS IT ALL!");
+        winnerArea.src = "winner.jpg"
+        winnerArea.style.visibility = 'visible';
+      }
+      playerScoreArea.innerText = 0;
+      dealerScoreArea.innerText = 0;
+    }
     
   }
+  
   
 }
 
